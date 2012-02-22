@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MooValidForm - A Form Validation Class for MooTools</title>
+	<!-- Css -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />	
+	<!-- MooToools -->
+	<script type="text/javascript" src="js/mootools-core-1.4.2-full-compat.js"></script>
+	<script type="text/javascript" src="js/mootools-more-1.4.0.1.js"></script>
+	<!-- mooValidForm Script -->
+	<script type="text/javascript" src="../mooValidForm.js"></script>
+	
+	<script type="text/javascript">
+		window.addEvent('domready', function() {
+			var mooFormInstance = new mooValidForm({
+				myForm: 'mooForm_contact'
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="container">
+		<h2>Contact Form Example</h2>	
+		
+		<h3>Validation Case:</h3>
+		<ul id="desc">
+			<li>Name, Email &amp; Message Required</li>
+			<li>Name only Alphanumerical Characters accepted</li>
+			<li>Email correctly formatted</li>
+		</ul>
+		
+		<form action="contact.html" method="get" id="mooForm_contact">
+			<!-- Name -->
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name" class="required onlyAlpha" /> 
+			<!-- Email -->
+			<label for="email">Email</label>
+			<input type="text" name="email" id="email" class="" />
+			<!-- Homepage -->
+			<label for="homepage">Homepage</label>
+			<input type="text" name="homepage" id="homepage" value="http://"/>
+			<!-- Newsletter -->
+			<label for="message">Message</label>
+			<textarea name="message"></textarea>
+			<!-- Send -->
+			<br />
+			<input type="submit" id="submit" value="Send" />
+		</form>
+	</div>
+</body>
+</html>
